@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Angular JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendor/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/foundation-icons.css" />
+	<link rel="stylesheet" href="styles/daterangepicker/style.css" />
+	<link rel="stylesheet" href="styles/richtexteditor/jquery-te-1.4.0.css" />
+	<link rel="stylesheet" href="styles/attachmentpicker/style.css" />
+	<link rel="stylesheet" href="styles/responsive-tables.css" />
+	<link rel="stylesheet" href="styles/main.css" />
+	<link rel="stylesheet" href="styles/app.css" />
+	<link rel="stylesheet" href="styles/confirmation/alert-panels.css" />
+	<link rel="stylesheet" href="styles/modal/modal.css" />
+    <!-- endbuild -->
+  </head>
+  <body ng-app="sas-ux" ng-controller="AuthentiationCtrl" ng-init="initializeApp()" ng-strict-di>
+
+	<div ng-include="'src/navigation/main.tpl.html'"></div>
+	<div class="row">
+		<div ui-view class="large-12 small-12 columns"></div>
+	</div>
+	
+	<span id="overlay" us-spinner></span>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="vendor/modernizr/modernizr.js"></script>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/json3/lib/json3.js"></script>
+    <script src="vendor/angular-resource/angular-resource.js"></script>
+    <script src="vendor/angular-cookies/angular-cookies.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="vendor/angular-animate/angular-animate.js"></script>
+    <script src="vendor/angular-touch/angular-touch.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/fastclick/lib/fastclick.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="vendor/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="vendor/foundation/js/foundation.js"></script>
+    <script src="vendor/angular-foundation/mm-foundation.js" ></script>
+	<script src="vendor/angular-foundation/mm-foundation-tpls.js" ></script>
+    <script src="vendor/spin.js/spin.js"></script>
+    <script src="vendor/angular-spinner/angular-spinner.js"></script>
+    <script src="vendor/lodash/lodash.js"></script>
+    <script src="vendor/moment/moment.js"></script>
+    <script src="vendor/angular-moment/angular-moment.js"></script>
+    <script src="styles/scripts/responsive-tables.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+	<script src="src/app.js"></script>
+	
+	
+	<script src="src/dashboard/app.js"></script>
+	<script src="src/dashboard/controllers.js"></script>
+	<script src="src/dashboard/admin/app.js"></script>
+	<script src="src/dashboard/admin/controllers.js"></script>
+	<script src="src/dashboard/student/app.js"></script>
+	<script src="src/dashboard/student/controllers.js"></script>
+
+	<script src="src/navigation/app.js"></script>
+	<script src="src/navigation/controllers.js"></script>
+	<script src="src/navigation/student-controllers.js"></script>
+
+	<script src="src/user/app.js"></script>
+	<script src="src/user/services.js"></script>
+	<script src="src/user/factories.js"></script>
+	<script src="src/user/login/app.js"></script>
+	<script src="src/user/register/app.js"></script>
+	<script src="src/user/login/controllers.js"></script>
+	<script src="src/user/register/controllers.js"></script>
+
+	<script src="src/components/app.js"></script>
+	<script src="src/components/common/app.js"></script>
+	<script src="src/components/attachmentpicker/app.js"></script>
+	<script src="src/components/attachmentpicker/controllers.js"></script>
+	<script src="src/components/attachmentpicker/sas-attachment-picker.js"></script>
+	<script src="src/components/common/factories/app.js"></script>
+	<script src="src/components/common/factories/common-files.js"></script>
+	<script src="src/components/common/filters/app.js"></script>
+	<script src="src/components/common/filters/trust-sanitize.js"></script>
+	<script src="src/components/common/services/app.js"></script>
+	<script src="src/components/common/services/common-files.js"></script>
+	<script src="src/components/common/services/common-util.js"></script>
+	<script src="src/components/common/services/dateutil.js"></script>
+	<script src="src/components/common/services/priority.js"></script>
+	<script src="src/components/common/services/role.js"></script>
+	<script src="src/components/common/services/status.js"></script>
+	<script src="src/components/localstorage/app.js"></script>
+	<script src="src/components/localstorage/local-storage.js"></script>
+	<script src="src/components/oauth/app.js"></script>
+	<script src="src/components/oauth/factories.js"></script>
+	<script src="src/components/oauth/services.js"></script>
+	<script src="src/components/spinner/app.js"></script>
+	<script src="src/components/spinner/sas-loading-spinner.js"></script>
+	<script src="src/components/confirmation/app.js"></script>
+	<script src="src/components/confirmation/controllers.js"></script>
+	<script src="src/components/confirmation/sas-confirm.js"></script>
+	<script src="src/components/customize/app.js"></script>
+	<script src="src/components/customize/controllers.js"></script>
+	<script src="src/components/customize/sas-custom.js"></script>
+	<script src="src/components/daterangepicker/app.js"></script>
+	<script src="src/components/daterangepicker/controllers.js"></script>
+	<script src="src/components/daterangepicker/daterangepicker.js"></script>
+	<script src="src/components/daterangepicker/sas-daterange-picker.js"></script>
+	<script src="src/components/richtexteditor/app.js"></script>
+	<script src="src/components/richtexteditor/controllers.js"></script>
+	<script src="src/components/richtexteditor/jquery-te-1.4.0.js"></script>
+	<script src="src/components/richtexteditor/sas-rich-text-editor.js"></script>
+	<script src="src/components/fileupload/app.js"></script>
+	<script src="src/components/fileupload/controllers.js"></script>
+	<script src="src/components/fileupload/sas-file-upload.js"></script>
+	<script src="src/components/modal/app.js"></script>
+	<script src="src/components/modal/controllers.js"></script>
+	<script src="src/components/modal/sas-modal.js"></script>
+	<script src="src/components/relink/app.js"></script>
+	<script src="src/components/relink/controllers.js"></script>
+	<script src="src/components/relink/sas-relink.js"></script>
+	<script src="src/components/security/app.js"></script>
+	<script src="src/components/security/services.js"></script>
+	<script src="src/components/sidebar/app.js"></script>
+	<script src="src/components/sidebar/controllers.js"></script>
+	<script src="src/components/sidebar/sas-sidebar.js"></script>
+
+	<script src="src/config.js"></script>
+	<script src="generated/scripts/templates.js"></script>
+
+	<!-- endbuild -->
+ </body>
+</html>
