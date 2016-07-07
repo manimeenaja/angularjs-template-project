@@ -1,0 +1,12 @@
+@import "settings";
+@import "../../vendor/foundation/scss/foundation";
+
+$include-html-button-classes: $include-html-classes;
+
+.custom-button-class {
+    @include button;
+    $button-font-align: left;
+
+    $button-border-style: dotted;
+
+}
