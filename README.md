@@ -4,8 +4,11 @@ A Template project which can be cloned to setup an angular js application with m
 Instructions
 
 1.Clone the project into a new folder
+
 2.npm install
+
 3.bower install
+
 4.grunt serve
 
 Application starts on http://localhost:9000
