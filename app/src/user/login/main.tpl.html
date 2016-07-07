@@ -1,0 +1,38 @@
+<div align="center" ng-controller="LoginCtrl" ng-init="initialzeLogin()">
+	<fieldset>
+		<legend>Login</legend>
+		<div align="left">
+			<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+			<form name="loginForm" ng-submit="login()" novalidate="novalidate">
+				<div class="row">
+					<div class="large-4 small-12 columns end">
+						<label ng-class="getCssClass(loginForm.username)">Username<sup>*</sup>
+							<input type="text" name="username" ng-model="credentials.username" required="required"/>
+							<small ng-show="showMessage(loginForm.username)" class="error">Please enter username.</small>
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="large-4 small-12 columns end">
+						<label ng-class="getCssClass(loginForm.pwd)">Password<sup>*</sup>
+							<input type="password" name="pwd" ng-model="credentials.password" required="required"/>
+						</label>
+						<small ng-show="showMessage(loginForm.pwd)" class="error">Please enter password.</small>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="large-4 small-10 columns end">
+						<a class="button tiny right info" ng-click="forgotPassword()"><i class="fa fa-tn fa-lock"> </i> Forgot Password<a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="large-2 small-6 columns">
+						<button type="submit" class="button">Login</button>
+					</div>	
+				</div>
+			</form>
+		</div>
+	</fieldset>
+</div>

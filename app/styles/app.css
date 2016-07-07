@@ -1,0 +1,204 @@
+/* Spinner overlay */
+#overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #CCFFFF;
+	opacity: 0.4;
+	z-index: 999999;
+}
+
+[class^="fi-"],[class*=" fi-"] {
+	font-size: 36px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+@charset "UTF-8";
+
+.accordion-navigation>a:after {
+	content: "↡";
+	padding-left: 5px;
+	float: right;
+	font-size: 20px;
+}
+
+.accordion dd a {
+	margin-bottom: 1px;
+}
+
+.column,.columns {
+	min-height: 1px;
+}
+
+.progress {
+	position: relative;
+}
+
+.progress .meter {
+	-webkit-transition: width 1s ease-out;
+	transition: width 1s ease-out;
+}
+
+.progress .meter span {
+	/*   width: 100%; */
+	color: #f07420;
+	position: absolute;
+	left: 40%;
+	top: 3px;
+}
+
+.pagination {
+	margin-bottom: 0px;
+}
+
+sup {
+	font-size: 14px;
+}
+
+.sidebar {
+	-moz-transition: right 2s;
+	-webkit-transition: right 2s;
+	-o-transition: right 2s;
+	transition: right 2s;
+	width: 70px;
+	background-color: black;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	color: white;
+	right: -100px;
+}
+
+.slide-out {
+	-moz-transition: right 1s;
+	-webkit-transition: right 1s;
+	-o-transition: right 1s;
+	transition: right 1s;
+	right: 0px;
+}
+
+.pullb {
+	-moz-transition: right 2s;
+	-webkit-transition: right 2s;
+	-o-transition: right 2s;
+	transition: right 2s;
+	transform: rotate(0deg);
+	text-align: left;
+	position: fixed;
+	right: 0px;
+	top: 50px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 50px;
+	height: 50px;
+	font-size: 30px;
+}
+
+.pull-out {
+	-moz-transition: right 1s;
+	-webkit-transition: right 1s;
+	-o-transition: right 1s;
+	transition: right 1s;
+	right: 70px;
+}
+
+table {
+	width: 100%;
+}
+
+.button .small {
+	margin-bottom: 0px;
+}
+
+[class^="fi-"].tiny {
+	font-size: 0.8125rem;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+[class^="fi-"].small {
+	font-size: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+[class^="fi-"].medium {
+	font-size: 18px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+[class^="fi-"].large {
+	font-size: 24px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+[class^="fi-"].xlarge {
+	font-size: 36px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.fa-tn {
+	font-size: 0.8125rem;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.fa-lg {
+	font-size: 18px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.fa-2x {
+	font-size: 24px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.fa-3x {
+	font-size: 36px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.text-1x {
+	font-size: 60%;
+	font-weight: bold;
+}
+
+.text-2x {
+	font-size: 70%;
+	font-weight: bold;
+}
+
+.text-3x {
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.alert-panel .close {
+	visibility: hidden;
+}
+
+input[type=checkbox] {
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.panel>span>p {
+	margin-bottom: 5px;
+}

@@ -1,0 +1,61 @@
+<div align="center" ng-controller="UserActivationCtrl" ng-init="initializeUserActivation()">
+	<fieldset>
+		<legend>Approval</legend>
+		<div align="left">
+			<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+			<form name="userActivationForm" novalidate="novalidate" ng-show="approvalData.users">
+				<table>
+					<thead>
+						<tr>
+							<th width="3%">
+								<input type="checkbox" ng-model="approvalData.selectAll" ng-change="selectAllChanged()" />
+							</th>
+							<th>Reg. No</th>
+							<th>Name</th>
+							<th>Role</th>
+							<th>Status</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in currUsers">
+							<td width="3%">
+								<input type="checkbox" ng-model="user.select" ng-change="selectUserChanged(user)"/>
+							</td>
+							<td>{{user.registerNo}}</td>
+							<td>{{user.firstName}} {{user.lastName}}</td>
+							<td>{{user.rolesLabel}}</td>
+							<td>{{user.status}}</td>
+							<td>
+								<a ng-click="approveUser(user)" title="Approve">
+									<i class="fa fa-check-circle fa-2x" >
+									</i>
+								</a>
+								<a ng-click="rejectUser(user)" title="Reject">
+									<i class="fa fa-times-circle fa-2x" >
+									</i>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="6">
+								<pagination on-select-page="pageSelected(page)" boundary-links="true" total-items="totalItems" page="currentPage" items-per-page="itemsPerPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+							</td>
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<td colspan="6">
+								<a class="button small" ng-click="approveAll()">Approve</a>
+								<a class="button small" ng-click="rejectAll()">Reject</a>
+								<a class="button small" ng-click="deleteAll()">Delete</a>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div>
+	</fieldset>
+</div>

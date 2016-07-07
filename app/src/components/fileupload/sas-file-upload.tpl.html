@@ -1,0 +1,10 @@
+<div style="position: relative;">
+	<input type="text" readonly="readonly" placeholder="Choose File(Max Size 2MB)"
+		ng-model="fname" name="fileName" ng-class="{'error' : isFileSizeExceeded}" />
+		<small ng-show="isFileSizeExceeded" class="error">File size exceeded limit(2MB).</small>
+	<i class="fi-upload"
+		style="position: absolute; top: 2px; right: 1px;">
+	</i>
+	<input title="Upload file" type="file" name="fileName" ng-scope-element="list"
+		style="position: absolute; top: 0; left: 0; height: 100%; opacity: 0; cursor: pointer;" />
+</div>

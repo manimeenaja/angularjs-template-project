@@ -1,0 +1,11 @@
+<div ng-controller="SideBarCtrl" ng-mouseleave="hideBar()">
+	<div class="sidebar" ng-class="{'slide-out':boolChangeClass}" ng-mouseenter="showBar()" ng-switch on="role">
+		<div ng-switch-when="ADMIN">
+			<div ng-include="'src/components/sidebar/admin.tpl.html'"></div>
+		</div>
+		<div ng-switch-default>
+			<div ng-include="'src/components/sidebar/user.tpl.html'"></div>
+		</div>
+	</div>
+	<button title="Uservoice" class="pullb fa fa-bullhorn fa-1x" ng-class="{'pull-out' :boolChangeClass}" ng-click="click()"></button>
+</div>

@@ -1,0 +1,27 @@
+<div ng-controller="NavigationCtrl" ng-init="initializeNavigation()" ng-switch on="role">
+	<div class="row">
+		<div class="large-12 small-12 columns">
+			<div>
+				<top-bar>
+					<ul class="title-area">
+						<li class="name">
+							<h1>
+								<a href="#/">{{appTitle}}</a>
+							</h1>
+						</li>
+						<li toggle-top-bar class="menu-icon"><a >Menu</a></li>
+					</ul>
+					<div ng-switch-when="STU">
+						<div ng-include="'src/navigation/student.tpl.html'"></div>
+					</div>
+					<div ng-switch-when="ADMIN">
+						<div ng-include="'src/navigation/administrator.tpl.html'"></div>
+					</div>
+					<div ng-switch-default>
+						<div ng-include="'src/navigation/unauthenticated.tpl.html'"></div>
+					</div>
+				</top-bar>
+			</div>
+		</div>
+	</div>
+</div>

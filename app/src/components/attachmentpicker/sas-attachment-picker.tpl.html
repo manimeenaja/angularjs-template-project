@@ -1,0 +1,36 @@
+<div  style="position: relative;">
+   
+     <div class="row collapse">
+         <div class="small-10 columns">
+           <input type="text" readonly="readonly" placeholder="Choose File(Max Size 2MB)" ng-model="fname" name="fileName" ng-class="{'error' : isFileSizeExceeded}"/>
+		        <small ng-show="isFileSizeExceeded" class="error">File size exceeded limit(2MB).</small>
+	        <i class="fi-upload" style="position: absolute; top: auto; right: 1px;bottom: 5px;"> </i>
+	        <input title="Upload file" type="file" name="fileName" ng-scope-element="list"
+	        style="position: absolute; top:0; left:0; height:100%; opacity:0; cursor: pointer;" />
+         </div>
+         
+         <div class="small-2 columns">
+           <a class="button postfix" ng-click="upload()">
+           	 <i ng-class="{'fa fa-minus fa-lg' : isFileSizeExceeded, 'fa fa-plus fa-lg': !isFileSizeExceeded}" > </i>
+           </a>
+         </div>
+       
+     </div>
+        
+      <div ng-repeat="fileObj in files">
+          <div class="row">
+              <div class="small-10 columns">
+               {{fileObj.name}}
+              </div>
+              
+              <div class="small-2 columns">
+	              <button class="arlink" ng-click="removeFile(fileObj)" >
+	              	<i class="fa fa-remove"></i>
+	              </button>
+              </div>
+              
+          </div>
+      </div>
+      
+ </div>
+ 

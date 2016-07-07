@@ -1,0 +1,94 @@
+<div align="center" ng-controller="RegistrationCtrl" ng-init="initializeRegistration()">
+	<fieldset>
+		<legend>Register</legend>
+		<div align="left">
+			<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+			<form name="registerForm" ng-submit="registerUser(user)" novalidate="novalidate">
+				<fieldset>
+					<legend>Role Details</legend>
+					<div class="row">
+						<div class="large-4 small-12 columns">
+							<label ng-class="getCssClass(registerForm.type)">Role<sup>*</sup>
+								<select ng-model="user.roles[0]" ng-options="userType as userType.description for userType in userTypes"
+								  name="type" required="required" ng-change="userTypeSelected()">
+									<option value="">Choose a user type</option>
+								</select>
+							</label>
+							<small ng-show="showMessage(registerForm.type)" class="error">Please choose a valid type.</small>
+						</div>
+
+						<div class="large-4 small-12 columns">
+							<label ng-class="getCssClass(registerForm.regNo)">Registration No<sup></sup>
+								<input type="text" name="regNo" ng-model="user.registerNo"/>
+							</label>
+							<small ng-show="showMessage(registerForm.regNo)" class="error">Please enter valid register no.</small>
+						</div>
+
+						<div class="large-4 small-12 columns end" ng-show="isStudent()">
+							<label ng-class="getCssClass(registerForm.sasClass)" re>Class<sup></sup>
+								<select ng-model="user.sasClassId" ng-options="sasClass.id as sasClass.title for sasClass in userSasClasses"
+								  name="sasClass">
+									<option value="">Choose a class</option>
+								</select>
+							</label>
+							<small ng-show="showMessage(registerForm.sasClass)" class="error">Please choose valid class.</small>
+						</div>
+					</div>
+
+				</fieldset>
+
+				<fieldset>
+					<legend>Personal Details</legend>
+					<div class="row">
+						<div class="large-4 small-12 columns">
+							<label ng-class="getCssClass(registerForm.firstName)">First Name<sup>*</sup>
+								<input type="text" name="firstName" ng-model="user.firstName" required="required"/>
+							</label>
+							<small ng-show="showMessage(registerForm.firstName)" class="error">Please enter valid name.</small>
+						</div>
+						<div class="large-4 small-12 columns end">
+							<label ng-class="getCssClass(registerForm.lastName)">Last Name<sup>*</sup>
+								<input type="text" name="lastName" ng-model="user.lastName" required="required"/>
+							</label>
+							<small ng-show="showMessage(registerForm.lastName)" class="error">Please enter valid name.</small>
+						</div>
+					</div>
+					<div class="row">
+						<div class="large-4 small-12 columns">
+							<label ng-class="getUsernameCssClass(registerForm.mail)">Email<sup>*</sup>
+								<input type="email" name="mail" ng-model="user.emailId" required="required"
+								ng-blur="showUsernameErrorMessage(registerForm.mail)" />
+							</label>
+							<span ng-show="usernameErrorFlag == 'required_error'">
+								<small class="error">Please enter valid email id.</small>
+							</span>
+							<span ng-show="usernameErrorFlag == 'unavailable_error'">
+								<small class="error">This email id is already registered.</small>
+							</span>
+						</div>
+						<div class="large-4 small-12 columns">
+							<label ng-class="getCssClass(registerForm.pwd)">Password<sup>*</sup>
+								<input type="password" name="pwd" ng-model="user.password" required="required"/>
+							</label>
+							<small ng-show="showMessage(registerForm.pwd)" class="error">Please enter password.</small>
+						</div>
+						<div class="large-4 small-12 columns end">
+							<label ng-class="getConfirmPasswordCssClass(registerForm.cpwd)">Confirm Password<sup>*</sup>
+								<input type="password" name="cpwd" ng-model="user.confirmPassword" required="required"/>
+							</label>
+							<small ng-show="showConfirmPasswordErrorMessage(registerForm.cpwd)" class="error">Passwords should match.</small>
+						</div>
+					</div>
+				</fieldset>
+				<div class="row">
+					<div class="large-2 small-6 columns">
+						<button type="submit" class="button">Submit</button>
+					</div>
+					<div class="large-2 small-6 columns end">
+						<button type="reset" ng-click="resetForm()" class="button">Reset</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</fieldset>
+</div>
