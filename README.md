@@ -12,10 +12,15 @@ You will get below rich features out of the box with the setup.
 3.Zurb Foundation Css support with many reusable components included
 
   i.Confirmation dialog
+  
   ii.File upload
+  
   iii.Modal
+  
   iv.Rich text editor
+  
   v.Spinner
+  
   vi.Sidebar
 
 4.Font-awesome & Foundation icon packs are included
